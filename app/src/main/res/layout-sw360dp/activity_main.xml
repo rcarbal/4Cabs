@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="first_app.rcarb.a4cabs.MainActivity"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="377dp"
+        android:layout_height="135dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/time_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/time_frames"
+                android:textColor="#000000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#c0c0c0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/thirty_button"
+                style="?android:attr/borderlessButtonStyle"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
+                android:onClick="thirtyClicked"
+                android:paddingBottom="24dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="31dp"
+                android:text="@string/thirty_minutes"
+                android:textColor="#BDBDBD" />
+
+            <Button
+                android:id="@+id/one_hour_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="oneHourClicked"
+                android:paddingBottom="24dp"
+                android:paddingLeft="34dp"
+                android:paddingRight="34dp"
+                android:paddingTop="31dp"
+                android:text="@string/hour"
+                android:textColor="#BDBDBD" />
+
+            <Button
+                android:id="@+id/two_hour_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="twoHourClicked"
+                android:paddingBottom="24dp"
+                android:paddingLeft="34dp"
+                android:paddingRight="34dp"
+                android:paddingTop="31dp"
+                android:text="@string/two_hours"
+                android:textColor="#BDBDBD" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="381dp"
+        android:layout_height="307dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        ads:layout_constraintHorizontal_bias="0.461"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/lax"
+            android:textColor="#757575"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/days_flight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="26dp"
+            android:text="0 TODAY"
+            android:textColor="#757575"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/updated"
+            android:textColor="#E8890C"
+            android:textSize="12sp" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="174dp"
+            android:layout_height="193dp"
+            android:layout_gravity="center|start"
+            android:layout_marginLeft="35dp"
+            android:layout_marginStart="35dp"
+            android:src="@drawable/ic_second_circle" />
+
+
+        <TextView
+            android:id="@+id/flights_landing"
+            android:layout_width="127dp"
+            android:layout_height="126dp"
+            android:layout_gravity="center|start"
+            android:layout_marginLeft="58dp"
+            android:layout_marginStart="58dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#01579B"
+            android:textSize="70sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="104dp"
+            android:layout_height="106dp"
+            android:layout_gravity="center|right"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="45dp"
+            android:scaleX="-1"
+            android:scaleY="-1"
+            android:src="@drawable/ic_plane" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <com.google.android.gms.ads.AdView
+
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/BANNER_ID"
+        ads:layout_constraintBottom_toTopOf="@+id/cardView"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.gms.ads.AdView>
+
+</android.support.constraint.ConstraintLayout>

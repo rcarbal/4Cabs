@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "179447782698",
+    "firebase_url": "https://cabs-8e492.firebaseio.com",
+    "project_id": "cabs-8e492",
+    "storage_bucket": "cabs-8e492.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179447782698:android:32ddb11653a03f76",
+        "android_client_info": {
+          "package_name": "first_app.rcarb.a4cabs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179447782698-rqqs4nc3npa2kgcp6kclk0gk00bibd2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "first_app.rcarb.a4cabs",
+            "certificate_hash": "e62973b2d0d5facbf4bcd3943fa0a64eca73bff2"
+          }
+        },
+        {
+          "client_id": "179447782698-ph45vsqrib7tepflnfre67qca3buvd48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXTzUSKoSJDDGh-hdyj_z-hy9tcy1MUzU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179447782698-ph45vsqrib7tepflnfre67qca3buvd48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
