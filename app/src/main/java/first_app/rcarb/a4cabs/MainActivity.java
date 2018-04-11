@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
 
 
-        mFirebaseReference = FirebaseDatabase.getInstance("https://flight-server.firebaseio.com")
+        mFirebaseReference = FirebaseDatabase.getInstance("")
                 .getReference().child("flight");
         mChildEventListsner = new ChildEventListener() {
             @Override
