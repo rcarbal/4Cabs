@@ -3,10 +3,25 @@
     <string name="thirty_minutes">30 minutes</string>
     <string name="hour">1 hour</string>
     <string name="two_hours">2 hours</string>
-    <string name="time_frames">FLIGHTS LANDING IN NEXT</string>
+    <string name="time_frames">VIEW FLIGHTS LANDING IN NEXT</string>
     <string name="lax">Los Angeles, LAX</string>
     <string name="updated">UPDATED:"</string>
     <string name="banner_ad_unit_id_TEST">ca-app-pub-3940256099942544/6300978111</string>
     <string name="ABMOB_ID" translatable="false">ca-app-pub-1888996966186582~4888294322</string>
     <string name="BANNER_ID" translatable="false">ca-app-pub-1888996966186582/5732749930</string>
+
+    <!--Flight list holder-->
+    <string name="flight_name">Flight Number</string>
+    <string name="terminal_name">Terminal</string>
+    <string name="arrival_time">Arrival Time</string>
+
+    <string name="flight_name_holder" translatable="false">AA111</string>
+    <string name="terminal_holder" translatable="false">1A</string>
+    <string name="arrival_holder" translatable="false">12:00 am</string>
+
+    <string name="deatil_header_flights_in_next">FLIGHTS IN NEXT </string>
+
+    <string name="detail_flight_number" >Flight</string>
+    <string name="detail_terminal" >Terminal</string>
+    <string name="deatil_arrival_time">Arrival</string>
 </resources>
