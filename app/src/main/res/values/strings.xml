@@ -21,7 +21,21 @@
 
     <string name="deatil_header_flights_in_next">FLIGHTS IN NEXT </string>
 
-    <string name="detail_flight_number" >Flight</string>
-    <string name="detail_terminal" >Terminal</string>
+    <string name="detail_flight_number">Flight</string>
+    <string name="detail_terminal">Terminal</string>
     <string name="deatil_arrival_time">Arrival</string>
+
+    <string name="detail_time_frame_30_min"> 30 MINUTES</string>
+    <string name="detail_time_frame_1_hour"> 1 HOUR</string>
+    <string name="detail_time_frame_2_hours"> 2 HOURS</string>
+
+    <string name="retry_text">No internet connection</string>
+    <string name="hit_retry">Retry</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+    <string name="title_flights_landing_today">Flights Landing Today</string>
+    <string name="please_open_app_ph">please open app</string>
+    <string name="no_flights">No flights to show</string>
 </resources>
+
