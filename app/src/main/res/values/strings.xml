@@ -37,5 +37,9 @@
     <string name="title_flights_landing_today">Flights Landing Today</string>
     <string name="please_open_app_ph">please open app</string>
     <string name="no_flights">No flights to show</string>
+
+    //Accessibility
+    <string name="add_banner">ad banner</string>
+
 </resources>
 

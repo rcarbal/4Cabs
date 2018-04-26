@@ -49,7 +49,9 @@
                 android:textColor="#3F51B5"
                 android:layout_gravity="center"
                 android:textSize="18sp"
-                android:onClick="startFlightListActivity"/>
+                android:onClick="startFlightListActivity"
+                android:nextFocusUp="@+id/flights_landing"
+                android:nextFocusDown="@+id/thirty_button"/>
 
             <View
                 android:layout_width="match_parent"
@@ -80,7 +82,8 @@
                 android:paddingRight="20dp"
                 android:paddingTop="31dp"
                 android:text="@string/thirty_minutes"
-                android:textColor="#BDBDBD" />
+                android:textColor="#BDBDBD"
+                android:nextFocusDown="@+id/one_hour_button"/>
 
             <Button
                 android:id="@+id/one_hour_button"
@@ -93,7 +96,9 @@
                 android:paddingRight="34dp"
                 android:paddingTop="31dp"
                 android:text="@string/hour"
-                android:textColor="#BDBDBD" />
+                android:textColor="#BDBDBD"
+                android:nextFocusUp="@+id/thirty_button"
+                android:nextFocusDown="@+id/two_hour_button"/>
 
             <Button
                 android:id="@+id/two_hour_button"
@@ -106,7 +111,8 @@
                 android:paddingRight="34dp"
                 android:paddingTop="31dp"
                 android:text="@string/two_hours"
-                android:textColor="#BDBDBD" />
+                android:textColor="#BDBDBD"
+                android:nextFocusUp="@+id/one_hour_button"/>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
@@ -197,7 +203,9 @@
             android:gravity="center_horizontal"
             android:text="0"
             android:textColor="#01579B"
-            android:textSize="105sp" />
+            android:textSize="105sp"
+            android:nextFocusDown="@id/list_activity_button"
+            android:focusable="true"/>
 
 
     </android.support.v7.widget.CardView>
@@ -218,7 +226,10 @@
         ads:layout_constraintHorizontal_bias="0.0"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent"
-        ads:layout_constraintVertical_bias="0.446">
+        ads:layout_constraintVertical_bias="0.446"
+        android:contentDescription="@string/add_banner"
+        android:nextFocusDown="@+id/flights_landing"
+        android:focusable="false">
 
     </com.google.android.gms.ads.AdView>
 

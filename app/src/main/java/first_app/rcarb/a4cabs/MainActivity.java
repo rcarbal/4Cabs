@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +28,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import first_app.rcarb.a4cabs.loaders.CheckConnectionLoader;
 import first_app.rcarb.a4cabs.loaders.PrepareFlightArrayLoader;
 import first_app.rcarb.a4cabs.objects.FlightObject;
@@ -35,18 +38,26 @@ import first_app.rcarb.a4cabs.utilities.ActionStrings;
 import first_app.rcarb.a4cabs.widget.WidgetUpdateIntentService;
 
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     private final static int GET_FLIGHT_TIME_FRAME_LOADER = 1;
     private final static int CHECK_NETWORK_CONNECTION = 2;
-    private AdView mAdView;
-
-    private Button thirtyButton;
-    private Button oneHourButton;
-    private Button twoHour;
-    private Button mListActivityButton;
-
-    private TextView mFligtsLanding;
-    private TextView mDaysFlight;
-    private TextView mUpdated;
+    @BindView(R.id.adView)
+    AdView mAdView;
+    @BindView(R.id.thirty_button)
+    Button thirtyButton;
+    @BindView(R.id.one_hour_button)
+    Button oneHourButton;
+    @BindView(R.id.two_hour_button)
+    Button twoHour;
+    @BindView(R.id.list_activity_button)
+    Button mListActivityButton;
+    @BindView(R.id.flights_landing)
+    TextView mFligtsLanding;
+    @BindView(R.id.days_flight)
+    TextView mDaysFlight;
+    @BindView(R.id.updated)
+    TextView mUpdated;
 
     private DatabaseReference mFirebaseReference;
     private ChildEventListener mChildEventListsner;
@@ -62,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         if (savedInstanceState != null) {
             mTimeFrameSelected = savedInstanceState.getInt(ActionStrings.SAVE_TIME_SELECTED);
         } else {
@@ -71,17 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
         MobileAds.initialize(this, getString(R.string.ABMOB_ID));
         mFlightArray = new ArrayList<>();
-
-        thirtyButton = findViewById(R.id.thirty_button);
-        oneHourButton = findViewById(R.id.one_hour_button);
-        twoHour = findViewById(R.id.two_hour_button);
-        mListActivityButton = findViewById(R.id.list_activity_button);
         mListActivityButton.setClickable(false);
-        mFligtsLanding = findViewById(R.id.flights_landing);
-        mDaysFlight = findViewById(R.id.days_flight);
-        mUpdated = findViewById(R.id.updated);
-
-        mAdView = findViewById(R.id.adView);
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         checkInternetConnection();
 
     }
@@ -203,6 +207,10 @@ public class MainActivity extends AppCompatActivity {
             }
             mFligtsLanding.setText("" + mSync);
         }
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, getString(R.string.thirty_minutes));
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "button");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
 
@@ -225,6 +233,10 @@ public class MainActivity extends AppCompatActivity {
             mSync = mSyncObject.getHour();
             mFligtsLanding.setText("" + mSync);
         }
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, getString(R.string.hour));
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "button");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
     public void twoHourClicked(View view) {
@@ -246,6 +258,10 @@ public class MainActivity extends AppCompatActivity {
             mSync = mSyncObject.getTwoHour();
             mFligtsLanding.setText("" + mSync);
         }
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, getString(R.string.two_hours));
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "button");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
 

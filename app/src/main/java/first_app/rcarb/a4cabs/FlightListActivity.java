@@ -17,37 +17,40 @@ import com.google.android.gms.ads.AdView;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import first_app.rcarb.a4cabs.adaptors.FlightArrayAdaptor;
 import first_app.rcarb.a4cabs.objects.FlightObject;
 import first_app.rcarb.a4cabs.utilities.ActionStrings;
 
 public class FlightListActivity extends AppCompatActivity {
-
-    private AdView mAdView;
+    @BindView(R.id.adView2)
+    AdView mAdView;
+    @BindView(R.id.set_time_frame_tv)
+    TextView mTimeFrameTextView;
+    @BindView(R.id.flight_list_rv)
+    RecyclerView mRecyclerView;
 
     private ArrayList<FlightObject>mFlightArray;
     private int mTimeFrameselected;
-    private TextView mTimeFrameTextView;
-
-    private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        postponeEnterTransition();
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.list_detail_activity);
-        mAdView = findViewById(R.id.adView2);
+
+        ButterKnife.bind(this);
+        postponeEnterTransition();
+
         AdRequest adRequest =  new AdRequest.Builder()
                 .build();
         mAdView.loadAd(adRequest);
-        mTimeFrameTextView = findViewById(R.id.set_time_frame_tv);
         getIntentExtras();
 
         //Setup recyclerview
-        mRecyclerView = findViewById(R.id.flight_list_rv);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
