@@ -1,9 +1,6 @@
 package first_app.rcarb.a4cabs.loaders;
 
-import android.content.AsyncTaskLoader;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import java.util.ArrayList;
 
@@ -11,7 +8,7 @@ import first_app.rcarb.a4cabs.objects.FlightObject;
 
 public class PrepareFlightArrayLoader extends android.support.v4.content.AsyncTaskLoader<ArrayList<FlightObject>> {
 
-    private ArrayList<FlightObject> mData;
+    private final ArrayList<FlightObject> mData;
     private int mTimeFrame;
 
     public PrepareFlightArrayLoader(Context context, ArrayList<FlightObject> flights, int timeFrame) {
@@ -27,6 +24,7 @@ public class PrepareFlightArrayLoader extends android.support.v4.content.AsyncTa
         assert mData != null;
         ArrayList<FlightObject> returnedArray = new ArrayList<>();
         for (FlightObject flight : mData) {
+            //noinspection IfCanBeSwitch
             if (mTimeFrame == 0) {
                 if (flight.getTImeFrame() == 0) {
                     returnedArray.add(flight);

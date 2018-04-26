@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:layout_marginLeft="1dp"
+                android:layout_marginStart="1dp"
                 android:layout_marginTop="4dp"
                 android:text="@string/time_frames"
                 android:textColor="#3F51B5"
@@ -49,7 +49,7 @@
                 android:textSize="18sp"
                 android:onClick="startFlightListActivity"
                 android:nextFocusUp="@+id/flights_landing"
-                android:nextFocusDown="@+id/thirty_button"/>/>
+                android:nextFocusDown="@+id/thirty_button"/>
 
             <View
                 android:layout_width="match_parent"
@@ -130,7 +130,6 @@
 
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
@@ -149,7 +148,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="26dp"
-            android:text="0 TODAY"
+            android:text="@string/zero_flights"
             android:textColor="#757575"
             android:textSize="18sp" />
 
@@ -168,13 +167,13 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="174dp"
             android:layout_height="193dp"
             android:layout_gravity="center|start"
             android:layout_marginLeft="35dp"
             android:layout_marginStart="35dp"
-            android:src="@drawable/ic_second_circle" />
+            android:src="@drawable/ic_second_circle"
+            android:contentDescription="@string/no_content_description" />
 
 
         <TextView
@@ -185,7 +184,7 @@
             android:layout_marginLeft="58dp"
             android:layout_marginStart="58dp"
             android:gravity="center"
-            android:text="0"
+            android:text="@string/zero_number"
             android:textColor="#01579B"
             android:textSize="70sp"
             android:nextFocusDown="@id/list_activity_button"
@@ -193,7 +192,6 @@
             />
 
         <ImageView
-            android:id="@+id/imageView3"
             android:layout_width="104dp"
             android:layout_height="106dp"
             android:layout_gravity="center|right"
@@ -202,7 +200,8 @@
             android:layout_marginTop="45dp"
             android:scaleX="-1"
             android:scaleY="-1"
-            android:src="@drawable/ic_plane" />
+            android:src="@drawable/ic_plane"
+            android:contentDescription="@string/no_content_description" />
 
 
     </android.support.v7.widget.CardView>

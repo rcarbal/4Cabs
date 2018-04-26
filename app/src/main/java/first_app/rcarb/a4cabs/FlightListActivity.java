@@ -3,8 +3,6 @@ package first_app.rcarb.a4cabs;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.NavUtils;
-import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +21,7 @@ import first_app.rcarb.a4cabs.adaptors.FlightArrayAdaptor;
 import first_app.rcarb.a4cabs.objects.FlightObject;
 import first_app.rcarb.a4cabs.utilities.ActionStrings;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class FlightListActivity extends AppCompatActivity {
     @BindView(R.id.adView2)
     AdView mAdView;
@@ -69,6 +68,7 @@ public class FlightListActivity extends AppCompatActivity {
         return(super.onOptionsItemSelected(item));
     }
 
+    @SuppressWarnings("IfCanBeSwitch")
     private void getIntentExtras(){
         Intent intent = getIntent();
         mFlightArray = intent.getParcelableArrayListExtra(ActionStrings.SEND_FLIGHTS_ARRAYLIST);

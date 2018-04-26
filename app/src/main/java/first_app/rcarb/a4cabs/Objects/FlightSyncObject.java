@@ -57,41 +57,24 @@ public class FlightSyncObject implements Parcelable {
         }
     };
 
-    public void setThirty(int thirty){
-        this.thirty = thirty;
-    }
     public int getThirty(){
         return thirty;
     }
-    public void setHour(int hour){
-        this.hour = hour;
-    }
+
     public int getHour(){
         return hour;
     }
-    public void setTwoHour(int twoHour){
-        this.twoHour = twoHour;
-    }
+
     public int getTwoHour(){
         return twoHour;
     }
-    public void setStamp(String stamp){
-        this.stamp = stamp;
-    }
+
     public String getStamp(){
         return stamp;
     }
-    public void setTotalFlights(String totalFlights){
-        this.totalFlight = totalFlights;
-    }
+
     public String getTotalFlights(){
         return totalFlight;
-    }
-    public void setEntireArrayList(ArrayList<FlightObject> flights){
-        mFlights.addAll(flights);
-    }
-    public ArrayList<FlightObject> getEntireFlightsArray(){
-        return mFlights;
     }
 
     @Override

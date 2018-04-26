@@ -8,22 +8,17 @@
     <string name="updated">UPDATED:"</string>
     <string name="banner_ad_unit_id_TEST">ca-app-pub-3940256099942544/6300978111</string>
     <string name="ABMOB_ID" translatable="false">ca-app-pub-1888996966186582~4888294322</string>
-    <string name="BANNER_ID" translatable="false">ca-app-pub-1888996966186582/5732749930</string>
 
     <!--Flight list holder-->
-    <string name="flight_name">Flight Number</string>
     <string name="terminal_name">Terminal</string>
     <string name="arrival_time">Arrival Time</string>
 
     <string name="flight_name_holder" translatable="false">AA111</string>
-    <string name="terminal_holder" translatable="false">1A</string>
     <string name="arrival_holder" translatable="false">12:00 am</string>
 
     <string name="deatil_header_flights_in_next">FLIGHTS IN NEXT </string>
 
     <string name="detail_flight_number">Flight</string>
-    <string name="detail_terminal">Terminal</string>
-    <string name="deatil_arrival_time">Arrival</string>
 
     <string name="detail_time_frame_30_min"> 30 MINUTES</string>
     <string name="detail_time_frame_1_hour"> 1 HOUR</string>
@@ -32,7 +27,6 @@
     <string name="retry_text">No internet connection</string>
     <string name="hit_retry">Retry</string>
     <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
 
     <string name="title_flights_landing_today">Flights Landing Today</string>
     <string name="please_open_app_ph">please open app</string>
@@ -40,6 +34,13 @@
 
     //Accessibility
     <string name="add_banner">ad banner</string>
+    <string name="no_content_description">No Content Descriptioin</string>
+    <string name="zero_flights">0 FLights</string>
+    <string name="zero_number">0</string>
+
+    <string name="airline_holder">some airline</string>
+    <string name="flights_today_string">Flights today</string>
+    <string name="updated_string">Updated</string>
 
 </resources>
 

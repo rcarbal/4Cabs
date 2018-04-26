@@ -1,13 +1,12 @@
 package first_app.rcarb.a4cabs.loaders;
 
-import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 public class CheckConnectionLoader extends android.support.v4.content.AsyncTaskLoader<Boolean> {
 
-    private Context mContext;
+    private final Context mContext;
     public CheckConnectionLoader(Context context) {
         super(context);
         mContext = context;

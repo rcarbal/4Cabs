@@ -22,7 +22,7 @@ import first_app.rcarb.a4cabs.objects.FlightSyncObject;
 public class WidgetUpdateIntentService extends IntentService {
 
     public final static String UPDATE_FLIGHTS_WIDGET = "update-flights-widget";
-    private Context mContext = this;
+    private final Context mContext = this;
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
      *
@@ -48,7 +48,7 @@ public class WidgetUpdateIntentService extends IntentService {
     }
 
     private void handleActionUpdateWidgetCount() {
-        final ArrayList<FlightObject>flightArray = new ArrayList<>();
+        @SuppressWarnings("MismatchedQueryAndUpdateOfCollection") final ArrayList<FlightObject>flightArray = new ArrayList<>();
         final FlightSyncObject[] object = new FlightSyncObject[1];
 
         DatabaseReference firebaseReference = FirebaseDatabase.getInstance("https://flight-server.firebaseio.com")
@@ -66,6 +66,7 @@ public class WidgetUpdateIntentService extends IntentService {
 
                 String daysFlight = null;
                 try {
+                    assert object[0] != null;
                     daysFlight = object[0].getTotalFlights();
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -134,21 +134,23 @@ public class MainActivity extends AppCompatActivity {
                 switch (mTimeFrameSelected) {
                     case 0:
                         int minutes = object.getThirty();
-                        mFligtsLanding.setText("" + minutes);
+                        mFligtsLanding.setText(String.valueOf(minutes));
                         break;
                     case 1:
                         int hour = object.getHour();
-                        mFligtsLanding.setText("" + hour);
+                        mFligtsLanding.setText(String.valueOf(hour));
                         break;
                     case 2:
                         int twoHour = object.getTwoHour();
-                        mFligtsLanding.setText("" + twoHour);
+                        mFligtsLanding.setText(String.valueOf(twoHour));
                 }
                 String days = object.getTotalFlights();
                 WidgetUpdateIntentService.updateWidgetFlightCount(MainActivity.this);
                 String updated = object.getStamp();
-                mDaysFlight.setText(days + " " + " Flights Today");
-                mUpdated.setText("Updated: " + updated);
+                String daysFlight = days + " " + getString(R.string.flights_today_string);
+                mDaysFlight.setText(daysFlight);
+                String updatedString = getString(R.string.updated_string)+ ": "+updated;
+                mUpdated.setText(updatedString);
             }
 
             @Override
@@ -205,7 +207,8 @@ public class MainActivity extends AppCompatActivity {
             if (mSync == -1) {
                 mSync = mSyncObject.getThirty();
             }
-            mFligtsLanding.setText("" + mSync);
+            String sync = String.valueOf(mSync);
+            mFligtsLanding.setText(sync);
         }
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, getString(R.string.thirty_minutes));
@@ -231,7 +234,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if (mSyncObject != null) {
             mSync = mSyncObject.getHour();
-            mFligtsLanding.setText("" + mSync);
+            String sync = String.valueOf(mSync);
+            mFligtsLanding.setText(sync);
         }
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, getString(R.string.hour));
@@ -256,7 +260,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if (mSyncObject != null) {
             mSync = mSyncObject.getTwoHour();
-            mFligtsLanding.setText("" + mSync);
+            String sync = String.valueOf(mSync);
+            mFligtsLanding.setText(sync);
         }
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, getString(R.string.two_hours));
@@ -348,7 +353,8 @@ public class MainActivity extends AppCompatActivity {
                     mSendFlightsToActivity.addAll(data);
                     if (mSendFlightsToActivity != null && mSendFlightsToActivity.size() > 0) {
                         mListActivityButton.setClickable(true);
-                        mFligtsLanding.setText("" + mSendFlightsToActivity.size());
+                        String flightSize = String.valueOf(mSendFlightsToActivity.size());
+                        mFligtsLanding.setText(flightSize);
                     }
 
                 }
