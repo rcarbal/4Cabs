@@ -42,7 +42,6 @@ public class FlightSyncObject implements Parcelable {
         stamp = in.readString();
         totalFlight = in.readString();
         mFlights = in.createTypedArrayList(FlightObject.CREATOR);
-        String a ="";
     }
 
     public static final Creator<FlightSyncObject> CREATOR = new Creator<FlightSyncObject>() {
@@ -57,24 +56,41 @@ public class FlightSyncObject implements Parcelable {
         }
     };
 
+    public void setThirty(int thirty){
+        this.thirty = thirty;
+    }
     public int getThirty(){
         return thirty;
     }
-
+    public void setHour(int hour){
+        this.hour = hour;
+    }
     public int getHour(){
         return hour;
     }
-
+    public void setTwoHour(int twoHour){
+        this.twoHour = twoHour;
+    }
     public int getTwoHour(){
         return twoHour;
     }
-
+    public void setStamp(String stamp){
+        this.stamp = stamp;
+    }
     public String getStamp(){
         return stamp;
     }
-
+    public void setTotalFlights(String totalFlights){
+        this.totalFlight = totalFlights;
+    }
     public String getTotalFlights(){
         return totalFlight;
+    }
+    public void setEntireArrayList(ArrayList<FlightObject> flights){
+        mFlights.addAll(flights);
+    }
+    public ArrayList<FlightObject> getEntireFlightsArray(){
+        return mFlights;
     }
 
     @Override
@@ -90,6 +106,5 @@ public class FlightSyncObject implements Parcelable {
         dest.writeString(stamp);
         dest.writeString(totalFlight);
         dest.writeTypedList(mFlights);
-        String a ="";
     }
 }
